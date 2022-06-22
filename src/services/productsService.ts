@@ -1,12 +1,18 @@
 import ProductsModel from '../models/productsModel';
 import connection from '../models/connection';
+import Product from '../interfaces/Product';
 
-const getAll = async () => {
+export const getAll = async () => {
   const productModel = new ProductsModel(connection);
   const allProducts = await productModel.getAll();
   return allProducts;
 };
 
-export default getAll;
+export const createProduct = async (newProduct: Product) => {
+  const { name, amount } = newProduct;
+  const productModel = new ProductsModel(connection);
+  const productDone = await productModel.createProduct(name, amount);
+  return productDone;
+};
 
 // criar productModel e fazer connection

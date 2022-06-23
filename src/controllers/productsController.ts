@@ -5,7 +5,7 @@ const productRouter = express.Router();
 
 productRouter.get('/', async (_req: Request, res: Response) => {
   const allProducts = await getAll();
-  res.status(200).json(allProducts);
+  return res.status(200).json(allProducts);
 });
 
 const validateName = (req: Request, res: Response, next: NextFunction) => {

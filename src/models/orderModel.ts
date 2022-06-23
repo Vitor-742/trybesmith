@@ -13,10 +13,8 @@ export default class OrderModel {
     this.connection = connection;
   }
 
-  public async getAll(): Promise<any> {
+  public async getAll(): Promise<Order[]> {
     const [allOrders] = await this.connection.execute(QUERY.GETALL);
-    // const test = allOrders.map((order) =>)
-    // const [productIds] = await this.connection.execute(QUERY.GETPRODUCTIDS, [allOrders]);
-    return allOrders;
+    return allOrders as Order[];
   }
 }

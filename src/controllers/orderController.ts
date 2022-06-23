@@ -1,4 +1,4 @@
-import express, { Request, Response, NextFunction } from 'express';
+import express, { Request, Response } from 'express';
 import getAll from '../services/orderService';
 
 const orderRouter = express.Router();

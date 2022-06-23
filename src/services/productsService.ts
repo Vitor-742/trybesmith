@@ -14,5 +14,3 @@ export const createProduct = async (newProduct: Product) => {
   const productDone = await productModel.createProduct(name, amount);
   return productDone;
 };
-
-// criar productModel e fazer connection
